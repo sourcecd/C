@@ -31,14 +31,14 @@ main() {
         gist[0]++;
     printf("m ");
     while (gist[0] > 0) {
-        putchar('#');
+        putchar('|');
         gist[0]--;
     }
     putchar('\n');
     for (i = 1; i < 10; i++) {
         printf("%d ", i);
         while (gist[i] > 0) {
-            putchar('#');
+            putchar('|');
             gist[i]--;
         }
         putchar('\n');
