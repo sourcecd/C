@@ -3,7 +3,7 @@
 #define IN 1
 #define OUT 0
 
-main() {
+int main() {
     int c, i, state, len;
     int gist[10];
     state = OUT;
@@ -12,12 +12,13 @@ main() {
         gist[i] = 0;
     while ((c = getchar()) != EOF) {
         if (c == '\t' || c == ' ' || c == '\n') {
-            if (state == IN) 
+            if (state == IN) {
                 if (len < 10)
                     gist[len]++;
                 else 
                     gist[0]++;
-                len = 0;
+            }
+            len = 0;
             state = OUT;
         }
         else {
@@ -25,9 +26,9 @@ main() {
             state = IN;
         }
     }
-    if (len < 10)
+    if (len > 0 && len < 10)
         gist[len]++;
-    else
+    else if (len > 0)
         gist[0]++;
     printf("m ");
     while (gist[0] > 0) {
