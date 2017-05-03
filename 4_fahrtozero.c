@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main() {
+int main() {
     int fahr;
     printf("  %s\n\n", "Table of temperature");
     printf("%s\t%s\n", "Fahringate", "Celsius");

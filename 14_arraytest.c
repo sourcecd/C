@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main() {
+int main() {
     int c, i;
     int nspace, nother;
     int ndigit[10];
