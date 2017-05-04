@@ -4,7 +4,7 @@
 #define OUT 0
 
 int main() {
-    int c, i, state, len;
+    int c, i, state, len, maxlen;
     int gist[10];
     state = OUT;
     len = 0;
@@ -32,18 +32,22 @@ int main() {
         gist[0]++;
 
 //generate histogram
-    printf("m ");
-    while (gist[0] > 0) {
-        putchar('|');
-        gist[0]--;
-    }
-    putchar('\n');
-    for (i = 1; i < 10; i++) {
-        printf("%d ", i);
-        while (gist[i] > 0) {
-            putchar('|');
-            gist[i]--;
+    maxlen = gist[0];
+    for (i = 1; i < 10; i++)
+        if (gist[i] > maxlen)
+            maxlen = gist[i];
+    while (maxlen != 0) {
+        for (i = 0; i < 10; i++) {
+            if (gist[i] < maxlen)
+                printf("   ");
+            else
+                printf(" # ");
         }
         putchar('\n');
+        maxlen--;
     }
+    printf(" m ");
+    for (i = 1; i < 10; i++)
+        printf(" %d ", i);
+    putchar('\n');
 }
