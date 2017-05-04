@@ -30,6 +30,8 @@ int main() {
         gist[len]++;
     else if (len >= 10)
         gist[0]++;
+
+//generate histogram
     printf("m ");
     while (gist[0] > 0) {
         putchar('|');
