@@ -28,7 +28,7 @@ int main() {
     }
     if (len > 0 && len < 10)
         gist[len]++;
-    else if (len > 0)
+    else if (len >= 10)
         gist[0]++;
     printf("m ");
     while (gist[0] > 0) {
