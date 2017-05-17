@@ -31,7 +31,7 @@ int getlines(char s[], int lim) {
     int c;
 
     for (i = 0; (c = getchar()) != EOF && c != '\n'; i++) {
-        if (i < (lim - 1)) {
+        if (i < (lim - 2)) {
             s[i] = c;
         } else {
             pass
