@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAXLINE 8
+#define MAXLINE 1000
 #define OVERFLOW 1
 #define NORMAL 0
 
