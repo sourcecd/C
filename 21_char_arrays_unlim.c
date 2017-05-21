@@ -29,6 +29,7 @@ int main() {
                     copy(longest, line);
                 }
             } else {
+                tmplen += len;
                 if (tmplen > max) {
                     max = tmplen;
                     copy(longest, tmpline);
