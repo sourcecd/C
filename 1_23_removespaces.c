@@ -1,18 +1,16 @@
 #include <stdio.h>
 
 #define MAXLINE 1000
-#define LENTOPRINT 80
 
 /* Function prototypes */
 int getlines(char line[], int maxline);
 
 /* Main function */
 int main() {
-    int len;
     char line[MAXLINE];
 
-    while ((len = getlines(line, MAXLINE)) > 0) {
-        if (len > LENTOPRINT) {
+    while (getlines(line, MAXLINE) > 0) {
+        if (line[0] != '\n') {
             printf("%s", line);
         }
     }
