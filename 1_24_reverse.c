@@ -5,12 +5,15 @@
 /* Function prototypes */
 int getlines(char line[], int maxline);
 int checkline(char newline[], int pos, char symb);
+void reverse(char ltr[], int len);
 
 /* Main function */
 int main() {
     char line[MAXLINE];
+    int c;
 
-    while (getlines(line, MAXLINE) > 0) {
+    while ((c = getlines(line, MAXLINE)) > 0) {
+        reverse(line, c);
         if (line[0] != '\n') {
             if (line[0] != ' ') {
                 printf("%s", line);
@@ -47,4 +50,22 @@ int checkline(char ml[], int p, char sy) {
         ml[p] = sy;
     }
     return p;
+}
+
+void reverse(char line_to_rev[], int length) {
+    int i;
+    int sw = 0;
+    char s[MAXLINE];
+
+    for (i = 0; i <= length; i++) {
+        if (line_to_rev[length - i] == '\0' || line_to_rev[length - i] == '\n') {
+            s[length - i] = line_to_rev[length - i];
+            sw++;
+        } else {
+            s[i - sw] = line_to_rev[length - i];
+        }
+    }
+    for (i = 0; i <= length; i++) {
+        line_to_rev[i] = s[i];
+    }
 }
